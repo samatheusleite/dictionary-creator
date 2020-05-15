@@ -7,7 +7,7 @@ void copy_content(FILE *file1, FILE *file2){
   printf("escrevendo...\n");
   while (fgets(Line, 50, file1) != NULL){
     //1. aceitar apenas palavras com mais de 4 letras
-    if (strlen(Line)>4){
+    if (strlen(Line)>=4){
       //2. verificar se primeira letra lida é igual a da palavra anterior
       if (Line[0] == Buffer[0]){
         //3. verificar se segunda letra lida é igual
