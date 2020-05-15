@@ -15,24 +15,22 @@ void copy_content(FILE *file1, FILE *file2){
           //4. verificar se a terceira letra lida é igual
           if (Line[2] == Buffer[2]){
             //5. verificar se a quarta letra lida é igual
-            if (Line[3] == Buffer[3]){
-              if (Line[4] != Buffer[4]){
+            if (Line[3] != Buffer[3]){
+              //if (Line[4] != Buffer[4]){
                 //6. se a quinta lida for diferente, escreve a palavra e muda a última letra do buffer
-                fputs(Line, file2);
-                Buffer[4] = Line[4];
-              } //6. senão, ignora a palavra
-            } //5. senão, escreve a palavra e muda as 2 últimas letras do buffer
-            else{
+                //fputs(Line, file2);
+                //Buffer[4] = Line[4];
+              //} //6. senão, ignora a palavra
+            //} //5. senão, escreve a palavra e muda as 2 últimas letras do buffer
+            //else{
               fputs(Line, file2);
               Buffer[3] = Line[3];
-              Buffer[4] = Line[4];
             }
           } //4. senão, escreve a palavra e muda as 3 últimas letras do buffer
           else{
               fputs(Line, file2);
               Buffer[2] = Line[2];
               Buffer[3] = Line[3];
-              Buffer[4] = Line[4];
             }
         } //3. senão, escreve a palavra e muda as 4 últimas letras do buffer
         else {
@@ -40,7 +38,6 @@ void copy_content(FILE *file1, FILE *file2){
           Buffer[1] = Line[1];
           Buffer[2] = Line[2];
           Buffer[3] = Line[3];
-          Buffer[4] = Line[4];
         }
       } //2. senão, escreve a palavra e muda o buffer
       else {
@@ -49,7 +46,6 @@ void copy_content(FILE *file1, FILE *file2){
         Buffer[1] = Line[1];
         Buffer[2] = Line[2];
         Buffer[3] = Line[3];
-        Buffer[4] = Line[4];
       }
     } //1. senão, ignora a palavra
   }
